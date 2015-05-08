@@ -7,7 +7,7 @@ The PDFView:
 * Allows customisation of page backgrounds, borders and insets
 * Allows display to be limited to a subset of pages within a PDF document
 * Allows observation of visible page number (or numbers)
-* Integrates with Interface Builder (mostly IBInspectable -- when not installing via Cocoapods)
+* Integrates with Interface Builder (mostly IBInspectable -- see note below if installing via Cocoapods)
 
 This repository contains an example app which you can use to play around with the PDFView's settings to see what it can do.
 
@@ -16,7 +16,7 @@ Installation
 
 Copy the `SJCSimplePDFView.h` and `SJCSimplePDFView.m` files into your project.
 
-(Cocopods integration coming soon.)
+Add `pod 'SJCSimplePDFView'` to your Podfile. In order for the control to be IBInspectable you must be targetting iOS 8 and add the `use_frameworks!` command to your Podfile.
 
 Use
 ---
