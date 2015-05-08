@@ -7,7 +7,7 @@ The PDFView:
 * Allows customisation of page backgrounds, borders and insets
 * Allows display to be limited to a subset of pages within a PDF document
 * Allows observation of visible page number (or numbers)
-* Integrates with Interface Builder (mostly IBInspectable)
+* Integrates with Interface Builder (mostly IBInspectable -- when not installing via Cocoapods)
 
 This repository contains an example app which you can use to play around with the PDFView's settings to see what it can do.
 
