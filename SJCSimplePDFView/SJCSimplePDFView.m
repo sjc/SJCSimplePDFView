@@ -244,19 +244,22 @@ static CGFloat const DoublePageCachingMargin = PageCachingMargin * 2.f;
         self.contentOffset = ({
             CGSize size = UIEdgeInsetsInsetRect(self.bounds, self.contentInset).size;
             CGPoint offset;
+            
+            NSUInteger currentPageIndex = (((currentPage - 1) > 0) ? (currentPage - 1) : 0);
+            
             switch(_viewMode) {
                 case kSJCPDFViewModeContinuous:
-                    offset = [_pageFrames[currentPage - 1] CGRectValue].origin;
+                    offset = [_pageFrames[currentPageIndex] CGRectValue].origin;
                     offset.x = 0.f;
                     offset.y = offset.y - _pageInsets.right - self.contentInset.top;
                     break;
                     
                 case kSJCPDFViewModePageVertical:
-                    offset = CGPointMake(0.f, size.height * currentPage);
+                    offset = CGPointMake(0.f, size.height * currentPageIndex);
                     break;
                     
                 case kSJCPDFViewModePageHorizontal:
-                    offset = CGPointMake(size.width * currentPage, 0.f);
+                    offset = CGPointMake(size.width * currentPageIndex, 0.f);
                     break;
             }
             offset;
